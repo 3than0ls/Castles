@@ -701,8 +701,25 @@ class Menu:
         text(display, (0, 0, 0), Rect(width*0.33, 240, 0, 0), "Archer: {}".format(Archer.cost), 15)
         text(display, (0, 0, 0), Rect(width*0.33, 255, 0, 0), "Cost: {}".format(Archer.cost), 15)
         # Wizard
-        text(display, (0, 0, 0), Rect(width*0.42, 290, 0, 0), "Wizard: {}".format(Wizard.cost), 15)
+        text(display, (0, 0, 0), Rect(width*0.42, 240, 0, 0), "Wizard: {}".format(Wizard.cost), 15)
         text(display, (0, 0, 0), Rect(width*0.42, 255, 0, 0), "Cost: {}".format(Wizard.cost), 15)
+
+        # blue side
+        # Swordsman
+        text(display, (0, 0, 0), Rect(width*0.58, 240, 0, 0), "Swordsman".format(Swordsman.cost), 15)  # name
+        text(display, (0, 0, 0), Rect(width*0.58, 255, 0, 0), "Cost: {}".format(Swordsman.cost), 15)  # cost
+        # Rogue
+        text(display, (0, 0, 0), Rect(width*0.67, 240, 0, 0), "Rogue: {}".format(Rogue.cost), 15)
+        text(display, (0, 0, 0), Rect(width*0.67, 255, 0, 0), "Cost: {}".format(Rogue.cost), 15)
+        # Shieldsman
+        text(display, (0, 0, 0), Rect(width*0.76, 240, 0, 0), "Shieldsman: {}".format(Shieldsman.cost), 15)
+        text(display, (0, 0, 0), Rect(width*0.76, 255, 0, 0), "Cost: {}".format(Shieldsman.cost), 15)
+        # Archer
+        text(display, (0, 0, 0), Rect(width*0.85, 240, 0, 0), "Archer: {}".format(Archer.cost), 15)
+        text(display, (0, 0, 0), Rect(width*0.85, 255, 0, 0), "Cost: {}".format(Archer.cost), 15)
+        # Wizard
+        text(display, (0, 0, 0), Rect(width*0.94, 240, 0, 0), "Wizard: {}".format(Wizard.cost), 15)
+        text(display, (0, 0, 0), Rect(width*0.94, 255, 0, 0), "Cost: {}".format(Wizard.cost), 15)
 
 
 def game_setup():
@@ -797,7 +814,10 @@ def main():
                 running = False
             if event.type == pygame.KEYUP:
                 if event.key == K_SPACE:
-                    menu_instance.menu_active = True
+                    if not menu_instance.menu_active:
+                        menu_instance.menu_active = True
+                    else:
+                        menu_instance.menu_active = False
 
         game()
 
